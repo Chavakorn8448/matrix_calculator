@@ -3,6 +3,7 @@ from input_matrix import get_one_metrix, get_two_metrix, print_metrix
 from add_subtract_matrix_calc import add_matrices, subtract_matrices
 from transpose_matrix_calc import transpose_matrix
 from determinant import determinant
+from multiply import multiply_matrix
 
 def main():
     print("Choose the operation:")
@@ -22,16 +23,21 @@ def main():
         if result is not None:
             print("Sum:")
             print_metrix(result)
-        pass
     elif choice == '2':
         matrix1, matrix2 = get_two_metrix()
         result = subtract_matrices(matrix1, matrix2)
         if result is not None:
             print("Differences:")
             print_metrix(result)
-        pass
     elif choice == '3':
-        pass
+        matrix1, matrix2 = get_two_metrix()
+        if len(matrix1[0]) == len(matrix2):
+            result = multiply_matrix(matrix1, matrix2)
+            if result is not None:
+                print("Multiplication:")
+                print_metrix(result)
+        else:
+            print("number of columns in the first matrix must be equal to the number of rows in the second matrix")
     elif choice == '4':
         pass
     elif choice == '5':

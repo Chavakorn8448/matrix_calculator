@@ -41,7 +41,11 @@ def main():
     elif choice == '4':
         pass
     elif choice == '5':
-        pass
+        matrix1 = get_one_metrix()
+        result = transpose_matrix(matrix1)
+        if result is not None:
+            print("Transpose:")
+            print_metrix(result)
     elif choice == '6':
         pass
     elif choice == '7':

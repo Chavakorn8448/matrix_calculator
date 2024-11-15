@@ -4,6 +4,7 @@ from add_subtract_matrix_calc import add_matrices, subtract_matrices
 from multiply import multiply_matrix
 from transpose_matrix_calc import transpose_matrix
 from determinant import determinant
+from multiply import multiply_matrix
 
 def main():
     print("Choose the operation:")
@@ -22,24 +23,21 @@ def main():
         if result is not None:
             print("Sum:")
             print_metrix(result)
-        pass
-
     elif choice == '2':
         matrix1, matrix2 = get_two_metrix()
         result = subtract_matrices(matrix1, matrix2)
         if result is not None:
             print("Differences:")
             print_metrix(result)
-        pass
-
     elif choice == '3':
         matrix1, matrix2 = get_two_metrix()
-        result = multiply_matrix(matrix1, matrix2)
-        print(result)
-        # print("Product:")
-        # print_metrix(result)
-        pass
-
+        if len(matrix1[0]) == len(matrix2):
+            result = multiply_matrix(matrix1, matrix2)
+            if result is not None:
+                print("Multiplication:")
+                print_metrix(result)
+        else:
+            print("number of columns in the first matrix must be equal to the number of rows in the second matrix")
     elif choice == '4':
         matrix1 = get_one_metrix()
         result = determinant(matrix1)
@@ -47,12 +45,11 @@ def main():
         pass
 
     elif choice == '5':
-        matrix = get_one_metrix()
-        result = transpose_matrix(matrix)
-        print("Transponsed Matrix:")
-        print_metrix(result)
-        pass
-
+        matrix1 = get_one_metrix()
+        result = transpose_matrix(matrix1)
+        if result is not None:
+            print("Transpose:")
+            print_metrix(result)
     elif choice == '6':
         pass
     else:

@@ -41,7 +41,7 @@ def get_one_metrix():
 
 def print_metrix(metrix):
     for row in metrix:
-        print(f"[{' '.join(map(str, row))}]")
+        print(f"{' '.join(map(str, row))}")
 
 def get_two_metrix():
     while True:

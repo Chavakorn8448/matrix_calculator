@@ -47,16 +47,14 @@ def main():
                 if result is not None:
                     print("Determinant:")
                     print(result)
-        else:
-            print("Input must be a square matrix. ")
+            else:
+                print("Input must be a square matrix. ")
         elif choice == '5':
             matrix1 = get_one_metrix()
             result = transpose_matrix(matrix1)
             if result is not None:
                 print("\nTranspose:")
                 print_metrix(result)
-            else:
-                print("Input must be a square matrix. ")
             pass
         elif choice == '6':
             pass

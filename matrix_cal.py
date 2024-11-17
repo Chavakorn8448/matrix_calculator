@@ -15,7 +15,7 @@ def main():
         print("   4 - Finding determinants")
         print("   5 - Transpose")
         print("   6 - Inverse")
-        print("   7 - Quit Program")
+        print("   7 - Exit")
         
         choice = input("Enter your choice: ")
         
@@ -39,7 +39,7 @@ def main():
                     print("\nMultiplication:")
                     print_metrix(result)
             else:
-                print("\nError: Number of columns in the first matrix\nmust be equal to the number of rows in the second matrix")
+                print("\nNumber of columns in the first matrix\nmust be equal to the number of rows in the second matrix")
 
         elif choice == '4':
             matrix1 = get_one_metrix()

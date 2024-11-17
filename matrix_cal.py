@@ -7,54 +7,61 @@ from determinant import determinant
 from multiply import multiply_matrix
 
 def main():
-    print("Choose the operation:")
-    print("   1 - Addition")
-    print("   2 - Subtraction")
-    print("   3 - Multiplication")
-    print("   4 - Finding determinants")
-    print("   5 - Transpose")
-    print("   6 - Inverse")
-    
-    choice = input("Enter your choice: ")
-    
-    if choice == '1':
-        matrix1, matrix2 = get_two_metrix()
-        result = add_matrices(matrix1, matrix2)
-        if result is not None:
-            print("Sum:")
-            print_metrix(result)
-    elif choice == '2':
-        matrix1, matrix2 = get_two_metrix()
-        result = subtract_matrices(matrix1, matrix2)
-        if result is not None:
-            print("Differences:")
-            print_metrix(result)
-    elif choice == '3':
-        matrix1, matrix2 = get_two_metrix()
-        if len(matrix1[0]) == len(matrix2):
-            result = multiply_matrix(matrix1, matrix2)
+    while True:
+        print("\nChoose the operation:")
+        print("   1 - Addition")
+        print("   2 - Subtraction")
+        print("   3 - Multiplication")
+        print("   4 - Finding determinants")
+        print("   5 - Transpose")
+        print("   6 - Inverse")
+        print("   7 - Quit Program")
+        
+        choice = input("Enter your choice: ")
+        
+        if choice == '1':
+            matrix1, matrix2 = get_two_metrix()
+            result = add_matrices(matrix1, matrix2)
             if result is not None:
-                print("Multiplication:")
+                print("\nSum:")
                 print_metrix(result)
-        else:
-            print("number of columns in the first matrix must be equal to the number of rows in the second matrix")
-    elif choice == '4':
-        matrix1 = get_one_metrix()
-        result = determinant(matrix1)
-        print(f"Determinant: {result}")
-        pass
+        elif choice == '2':
+            matrix1, matrix2 = get_two_metrix()
+            result = subtract_matrices(matrix1, matrix2)
+            if result is not None:
+                print("\nDifferences:")
+                print_metrix(result)
+        elif choice == '3':
+            matrix1, matrix2 = get_two_metrix()
+            if len(matrix1[0]) == len(matrix2):
+                result = multiply_matrix(matrix1, matrix2)
+                if result is not None:
+                    print("\nMultiplication:")
+                    print_metrix(result)
+            else:
+                print("\nError: Number of columns in the first matrix\nmust be equal to the number of rows in the second matrix")
+        elif choice == '4':
+            matrix1 = get_one_metrix()
+            result = determinant(matrix1)
+            print(f"\nDeterminant: {result}")
+            pass
 
-    elif choice == '5':
-        matrix1 = get_one_metrix()
-        result = transpose_matrix(matrix1)
-        if result is not None:
-            print("Transpose:")
-            print_metrix(result)
-    elif choice == '6':
-        pass
-    else:
-        print("Invalid choice")
-    pass
+        elif choice == '5':
+            matrix1 = get_one_metrix()
+            result = transpose_matrix(matrix1)
+            if result is not None:
+                print("\nTranspose:")
+                print_metrix(result)
+            pass
+        elif choice == '6':
+            pass
+        elif choice == '7':
+            print("\nByeBye")
+            return
+        else:
+            print("\nInvalid choice")
+            pass
 
 if __name__ == "__main__":
     main()
+    

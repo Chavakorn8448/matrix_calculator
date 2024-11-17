@@ -39,7 +39,13 @@ def main():
         else:
             print("number of columns in the first matrix must be equal to the number of rows in the second matrix")
     elif choice == '4':
-        pass
+        matrix1 = get_one_metrix()
+        result = determinant(matrix1)
+        if result is not None:
+            print("Determinant:")
+            print(result)
+        else:
+            print("Matrix must be squar (same number of rows and columns)")
     elif choice == '5':
         matrix1 = get_one_metrix()
         result = transpose_matrix(matrix1)

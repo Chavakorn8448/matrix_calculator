@@ -40,11 +40,17 @@ def main():
                     print_metrix(result)
             else:
                 print("\nError: Number of columns in the first matrix\nmust be equal to the number of rows in the second matrix")
+
         elif choice == '4':
             matrix1 = get_one_metrix()
-            result = determinant(matrix1)
-            print(f"\nDeterminant: {result}")
-            pass
+            if matrix1.shape[0] == matrix1.shape[1]:
+                result = determinant(matrix1)
+                if result is not None:
+                    print("Determinant:")
+                    print(result)
+        else:
+            print("Input must be a square matrix. ")
+            
 
         elif choice == '5':
             matrix1 = get_one_metrix()
@@ -52,6 +58,8 @@ def main():
             if result is not None:
                 print("\nTranspose:")
                 print_metrix(result)
+            else:
+                print("Input must be a square matrix. ")
             pass
         elif choice == '6':
             pass

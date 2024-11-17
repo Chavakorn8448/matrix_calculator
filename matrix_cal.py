@@ -47,17 +47,8 @@ def main():
                 print("Determinant:")
                 print(result)
         else:
-            print("Input must be a square matrix. Do you want to re-enter the matrix? (y to re-enter): ")
-            if input().lower() == 'y':
-                matrix1 = get_one_metrix()
-                if matrix1.shape[0] == matrix1.shape[1]:
-                    result = determinant(matrix1)
-                    if result is not None:
-                        print("Determinant:")
-                        print(result)
-                else:
-                    print("Input must be a square matrix")
-
+            print("Input must be a square matrix. ")
+            
     elif choice == '5':
         matrix1 = get_one_metrix()
         result = transpose_matrix(matrix1)

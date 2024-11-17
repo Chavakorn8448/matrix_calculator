@@ -40,7 +40,6 @@ def main():
                     print_metrix(result)
             else:
                 print("\nNumber of columns in the first matrix\nmust be equal to the number of rows in the second matrix")
-
         elif choice == '4':
             matrix1 = get_one_metrix()
             if matrix1.shape[0] == matrix1.shape[1]:
@@ -50,8 +49,6 @@ def main():
                     print(result)
         else:
             print("Input must be a square matrix. ")
-            
-
         elif choice == '5':
             matrix1 = get_one_metrix()
             result = transpose_matrix(matrix1)

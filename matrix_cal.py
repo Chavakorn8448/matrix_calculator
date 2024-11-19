@@ -5,6 +5,7 @@ from multiply import multiply_matrix
 from transpose_matrix_calc import transpose_matrix
 from determinant import determinant
 from multiply import multiply_matrix
+from inverse import matrix_inverse
 
 def main():
     while True:
@@ -57,6 +58,11 @@ def main():
                 print_metrix(result)
             pass
         elif choice == '6':
+            matrix1 = get_one_metrix()
+            result = matrix_inverse(matrix1)
+            if result is not None:
+                print("\nInverse:")
+                print_metrix(result)
             pass
         elif choice == '7':
             print("\nByeBye")
